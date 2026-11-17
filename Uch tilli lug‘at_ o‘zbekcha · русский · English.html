@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Uch tilli lug‘at: o‘zbekcha · русский · English</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f6f3ec;--surface:#fffdf8;--ink:#14213d;--muted:#5d6785;--line:#e3ddcc;
+  --tile:#12337a;--tile2:#1f5fbf;--turq:#17a398;--saffron:#f0a928;--soft:#e8f1fb;
+  --serif:"Literata",Georgia,"Times New Roman",serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1426;--surface:#13203b;--ink:#eef2fb;--muted:#9aa7c7;--line:#243558;--soft:#1a2c52;--tile:#0a1f52;--tile2:#1a4a99;}}
+:root[data-theme="dark"]{--bg:#0c1426;--surface:#13203b;--ink:#eef2fb;--muted:#9aa7c7;--line:#243558;--soft:#1a2c52;--tile:#0a1f52;--tile2:#1a4a99;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
+.hero{
+  background:
+   radial-gradient(circle at 50% 50%,transparent 0 9px,rgba(255,255,255,.08) 9px 10px,transparent 10px) 0 0/40px 40px,
+   conic-gradient(from 45deg at 50% 50%,var(--tile) 0 25%,var(--tile2) 0 50%,var(--tile) 0 75%,var(--tile2) 0) 0 0/80px 80px;
+  color:#fff;padding:56px 20px 88px;text-align:center;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(90deg,var(--saffron) 0 24px,var(--turq) 24px 48px)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,7vw,4rem);margin:0 0 10px;letter-spacing:-.01em}
+.hero p{margin:0 auto;max-width:44ch;color:#dbe6fb;font-size:1.05rem}
+.words{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-bottom:22px;font-family:var(--serif);font-size:1.15rem;color:var(--saffron)}
+main{max-width:920px;margin:-52px auto 0;padding:0 16px 64px;position:relative}
+.search{display:flex;align-items:center;gap:10px;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:6px 8px 6px 16px;box-shadow:0 10px 30px rgba(10,25,70,.22)}
+.search:focus-within{border-color:var(--turq)}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:600 1.15rem var(--sans);padding:12px 0;outline:none}
+.search button{border:0;background:var(--soft);color:var(--ink);font:700 .9rem var(--sans);border-radius:10px;padding:10px 14px;cursor:pointer}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.bar+.bar{margin-top:6px}
+.bar .lab{align-self:center;color:var(--muted);font-size:.85rem;margin-right:4px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:600 .88rem var(--sans);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--tile);border-color:var(--tile);color:#fff}
+.chip.cat[aria-pressed="true"]{background:var(--turq);border-color:var(--turq);color:#04201d}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.count{color:var(--muted);font-size:.9rem;margin:14px 2px 10px}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+li{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--turq);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+li:nth-child(3n+2){border-left-color:var(--saffron)}
+li:nth-child(3n){border-left-color:var(--tile2)}
+.w{display:flex;flex-direction:column;gap:2px;min-width:0}
+.w small{color:var(--muted);font-weight:800;font-size:.72rem}
+.w b{font-family:var(--serif);font-size:1.3rem;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
+.w.first b{font-size:1.5rem}
+.w.first small{color:var(--turq)}
+.say{align-self:flex-start;margin-top:4px;border:0;background:var(--soft);color:var(--ink);border-radius:8px;padding:3px 9px;font:700 .78rem var(--sans);cursor:pointer}
+mark{background:var(--saffron);color:#2a1d00;border-radius:3px;padding:0 1px}
+.empty{background:var(--surface);border:2px dashed var(--line);border-radius:14px;padding:32px 20px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-family:var(--serif);font-size:1.3rem;margin-bottom:4px}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 32px}
+@media (max-width:640px){li{grid-template-columns:1fr;gap:8px}.w{flex-direction:row;align-items:baseline;gap:10px}.w small{width:1.8rem;flex:none}.say{margin:0 0 0 auto}}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="words" aria-hidden="true"><span>Salom</span><span>Привет</span><span>Hello</span></div>
+  <h1>Uch tilli lug‘at</h1>
+  <p>O‘zbekcha, русский va English so‘zlarini bir joyda qidiring. Istalgan tilda yozing, qolgan ikkitasi darrov chiqadi.</p>
+</header>
+<main>
+  <div class="search" role="search">
+    <input id="q" type="search" placeholder="So‘z yozing: kitob, вода, friend…" autocomplete="off" aria-label="So‘z qidirish">
+    <button id="clr" type="button" aria-label="Tozalash">Tozalash</button>
+  </div>
+  <div class="bar" id="langs"><span class="lab">Birinchi til:</span></div>
+  <div class="bar" id="cats"><span class="lab">Mavzu:</span></div>
+  <div class="count" id="count" aria-live="polite"></div>
+  <ul id="list"></ul>
+</main>
+<footer>Bosh harfdan qat’i nazar qidiriladi. Uzbek tilida ‘ va ʼ belgilari bir xil hisoblanadi.</footer>
+
+<script>
+var L=[["uz","O‘zbekcha","uz-UZ"],["ru","Русский","ru-RU"],["en","English","en-US"]];
+var D=[
+["Salom","Привет","Hello","Salomlashuv"],["Xayr","До свидания","Goodbye","Salomlashuv"],
+["Rahmat","Спасибо","Thank you","Salomlashuv"],["Iltimos","Пожалуйста","Please","Salomlashuv"],
+["Kechirasiz","Извините","Sorry","Salomlashuv"],["Ha","Да","Yes","Salomlashuv"],["Yo‘q","Нет","No","Salomlashuv"],
+["Xush kelibsiz","Добро пожаловать","Welcome","Salomlashuv"],["Xayrli tong","Доброе утро","Good morning","Salomlashuv"],
+["Yaxshimisiz?","Как дела?","How are you?","Salomlashuv"],
+["Ona","Мама","Mother","Oila"],["Ota","Папа","Father","Oila"],["Aka","Старший брат","Older brother","Oila"],
+["Opa","Старшая сестра","Older sister","Oila"],["Bola","Ребёнок","Child","Oila"],["Do‘st","Друг","Friend","Oila"],
+["Oila","Семья","Family","Oila"],["Buvi","Бабушка","Grandmother","Oila"],["Bobo","Дедушка","Grandfather","Oila"],
+["Non","Хлеб","Bread","Ovqat"],["Suv","Вода","Water","Ovqat"],["Choy","Чай","Tea","Ovqat"],["Osh","Плов","Pilaf","Ovqat"],
+["Go‘sht","Мясо","Meat","Ovqat"],["Olma","Яблоко","Apple","Ovqat"],["Sut","Молоко","Milk","Ovqat"],
+["Uzum","Виноград","Grapes","Ovqat"],["Qovun","Дыня","Melon","Ovqat"],["Tuxum","Яйцо","Egg","Ovqat"],["Shakar","Сахар","Sugar","Ovqat"],
+["Bir","Один","One","Son va vaqt"],["Ikki","Два","Two","Son va vaqt"],["Uch","Три","Three","Son va vaqt"],
+["Besh","Пять","Five","Son va vaqt"],["O‘n","Десять","Ten","Son va vaqt"],["Yuz","Сто","Hundred","Son va vaqt"],
+["Bugun","Сегодня","Today","Son va vaqt"],["Ertaga","Завтра","Tomorrow","Son va vaqt"],["Kecha","Вчера","Yesterday","Son va vaqt"],
+["Soat","Час","Hour","Son va vaqt"],["Hafta","Неделя","Week","Son va vaqt"],["Yil","Год","Year","Son va vaqt"],
+["Shahar","Город","City","Sayohat"],["Yo‘l","Дорога","Road","Sayohat"],["Mehmonxona","Гостиница","Hotel","Sayohat"],
+["Bozor","Рынок","Market","Sayohat"],["Poyezd","Поезд","Train","Sayohat"],["Samolyot","Самолёт","Airplane","Sayohat"],
+["Chipta","Билет","Ticket","Sayohat"],["Xarita","Карта","Map","Sayohat"],["Aeroport","Аэропорт","Airport","Sayohat"],
+["Quyosh","Солнце","Sun","Tabiat"],["Oy","Луна","Moon","Tabiat"],["Yulduz","Звезда","Star","Tabiat"],["Tog‘","Гора","Mountain","Tabiat"],
+["Daryo","Река","River","Tabiat"],["Daraxt","Дерево","Tree","Tabiat"],["Gul","Цветок","Flower","Tabiat"],["Qor","Снег","Snow","Tabiat"],
+["Yomg‘ir","Дождь","Rain","Tabiat"],["Shamol","Ветер","Wind","Tabiat"],
+["Kitob","Книга","Book","Kundalik"],["Uy","Дом","House","Kundalik"],["Maktab","Школа","School","Kundalik"],
+["Ish","Работа","Work","Kundalik"],["Telefon","Телефон","Phone","Kundalik"],["Eshik","Дверь","Door","Kundalik"],
+["Oyna","Окно","Window","Kundalik"],["Stol","Стол","Table","Kundalik"],["Pul","Деньги","Money","Kundalik"],
+["Sevgi","Любовь","Love","Kundalik"],["Tinchlik","Мир","Peace","Kundalik"],["Vatan","Родина","Homeland","Kundalik"],
+["Qalam","Ручка","Pen","Kundalik"],["Daftar","Тетрадь","Notebook","Kundalik"],["Kalit","Ключ","Key","Kundalik"],["Soya","Тень","Shadow","Kundalik"],["Ko‘cha","Улица","Street","Kundalik"],["Hovli","Двор","Yard","Kundalik"],["Yangilik","Новость","News","Kundalik"],["Sovg‘a","Подарок","Gift","Kundalik"],["Orzu","Мечта","Dream","Kundalik"],["Til","Язык","Language","Kundalik"],
+["Shifokor","Врач","Doctor","Kasblar"],["O‘qituvchi","Учитель","Teacher","Kasblar"],["Talaba","Студент","Student","Kasblar"],["Haydovchi","Водитель","Driver","Kasblar"],["Quruvchi","Строитель","Builder","Kasblar"],["Oshpaz","Повар","Cook","Kasblar"],["Dehqon","Земледелец","Farmer","Kasblar"],["Muhandis","Инженер","Engineer","Kasblar"],["Dasturchi","Программист","Programmer","Kasblar"],["Hamshira","Медсестра","Nurse","Kasblar"],["Sartarosh","Парикмахер","Barber","Kasblar"],["Huquqshunos","Юрист","Lawyer","Kasblar"],
+["Ko‘ylak","Рубашка","Shirt","Kiyim"],["Shim","Брюки","Trousers","Kiyim"],["Poyabzal","Обувь","Shoes","Kiyim"],["Do‘ppi","Тюбетейка","Skullcap","Kiyim"],["Palto","Пальто","Coat","Kiyim"],["Ro‘mol","Платок","Headscarf","Kiyim"],["Qo‘lqop","Перчатки","Gloves","Kiyim"],["Kamar","Пояс","Belt","Kiyim"],["Paypoq","Носки","Socks","Kiyim"],["Ko‘zoynak","Очки","Glasses","Kiyim"],
+["Bosh","Голова","Head","Tana"],["Ko‘z","Глаз","Eye","Tana"],["Quloq","Ухо","Ear","Tana"],["Burun","Нос","Nose","Tana"],["Og‘iz","Рот","Mouth","Tana"],["Tish","Зуб","Tooth","Tana"],["Qo‘l","Рука","Hand","Tana"],["Oyoq","Нога","Leg","Tana"],["Yurak","Сердце","Heart","Tana"],["Soch","Волосы","Hair","Tana"],["Barmoq","Палец","Finger","Tana"],["Yelka","Плечо","Shoulder","Tana"],
+["Qizil","Красный","Red","Ranglar"],["Ko‘k","Синий","Blue","Ranglar"],["Yashil","Зелёный","Green","Ranglar"],["Sariq","Жёлтый","Yellow","Ranglar"],["Oq","Белый","White","Ranglar"],["Qora","Чёрный","Black","Ranglar"],["Kulrang","Серый","Gray","Ranglar"],["Pushti","Розовый","Pink","Ranglar"],["Jigarrang","Коричневый","Brown","Ranglar"],["To‘q sariq","Оранжевый","Orange","Ranglar"],
+["Ot","Лошадь","Horse","Hayvonlar"],["It","Собака","Dog","Hayvonlar"],["Mushuk","Кошка","Cat","Hayvonlar"],["Qush","Птица","Bird","Hayvonlar"],["Baliq","Рыба","Fish","Hayvonlar"],["Sigir","Корова","Cow","Hayvonlar"],["Qo‘y","Овца","Sheep","Hayvonlar"],["Tuya","Верблюд","Camel","Hayvonlar"],["Bo‘ri","Волк","Wolf","Hayvonlar"],["Sher","Лев","Lion","Hayvonlar"],["Quyon","Кролик","Rabbit","Hayvonlar"],["Kapalak","Бабочка","Butterfly","Hayvonlar"],
+["Bormoq","Идти","To go","Fe’llar"],["Kelmoq","Приходить","To come","Fe’llar"],["Yemoq","Есть","To eat","Fe’llar"],["Ichmoq","Пить","To drink","Fe’llar"],["Uxlamoq","Спать","To sleep","Fe’llar"],["O‘qimoq","Читать","To read","Fe’llar"],["Yozmoq","Писать","To write","Fe’llar"],["Gapirmoq","Говорить","To speak","Fe’llar"],["Ko‘rmoq","Видеть","To see","Fe’llar"],["Eshitmoq","Слышать","To hear","Fe’llar"],["Bilmoq","Знать","To know","Fe’llar"],["Sevmoq","Любить","To love","Fe’llar"],["Sotib olmoq","Покупать","To buy","Fe’llar"],["O‘ynamoq","Играть","To play","Fe’llar"],["Yugurmoq","Бежать","To run","Fe’llar"],["Kulmoq","Смеяться","To laugh","Fe’llar"],["Yordam bermoq","Помогать","To help","Fe’llar"],["O‘rganmoq","Учиться","To learn","Fe’llar"],
+["Katta","Большой","Big","Sifatlar"],["Kichik","Маленький","Small","Sifatlar"],["Yaxshi","Хороший","Good","Sifatlar"],["Yomon","Плохой","Bad","Sifatlar"],["Chiroyli","Красивый","Beautiful","Sifatlar"],["Tez","Быстрый","Fast","Sifatlar"],["Sekin","Медленный","Slow","Sifatlar"],["Issiq","Горячий","Hot","Sifatlar"],["Sovuq","Холодный","Cold","Sifatlar"],["Yangi","Новый","New","Sifatlar"],["Eski","Старый","Old","Sifatlar"],["Baland","Высокий","Tall","Sifatlar"],["Shirin","Сладкий","Sweet","Sifatlar"],["Xursand","Радостный","Happy","Sifatlar"],["Qiyin","Трудный","Difficult","Sifatlar"],["Oson","Лёгкий","Easy","Sifatlar"],
+["Kasalxona","Больница","Hospital","Salomatlik"],["Dori","Лекарство","Medicine","Salomatlik"],["Dorixona","Аптека","Pharmacy","Salomatlik"],["Og‘riq","Боль","Pain","Salomatlik"],["Isitma","Температура","Fever","Salomatlik"],["Shamollash","Простуда","Cold (illness)","Salomatlik"],["Sog‘lik","Здоровье","Health","Salomatlik"],["Tez yordam","Скорая помощь","Ambulance","Salomatlik"],
+["Kompyuter","Компьютер","Computer","Texnologiya"],["Internet","Интернет","Internet","Texnologiya"],["Parol","Пароль","Password","Texnologiya"],["Xabar","Сообщение","Message","Texnologiya"],["Ekran","Экран","Screen","Texnologiya"],["Dastur","Программа","Program","Texnologiya"],["Sichqoncha","Мышь","Mouse","Texnologiya"],["Zaryadlovchi","Зарядное устройство","Charger","Texnologiya"],["Fayl","Файл","File","Texnologiya"],["Qidirmoq","Искать","To search","Texnologiya"],
+["Bank","Банк","Bank","Sayohat"],["Pasport","Паспорт","Passport","Sayohat"],["Chegara","Граница","Border","Sayohat"],["Yo‘lovchi","Пассажир","Passenger","Sayohat"],["Choyxona","Чайхана","Tea house","Sayohat"],["Metro","Метро","Subway","Sayohat"],["Avtobus","Автобус","Bus","Sayohat"],["Ko‘prik","Мост","Bridge","Sayohat"],
+["Bahor","Весна","Spring","Tabiat"],["Yoz","Лето","Summer","Tabiat"],["Kuz","Осень","Autumn","Tabiat"],["Qish","Зима","Winter","Tabiat"],["Osmon","Небо","Sky","Tabiat"],["Ko‘l","Озеро","Lake","Tabiat"],["Cho‘l","Пустыня","Desert","Tabiat"],["Tosh","Камень","Stone","Tabiat"],["Olov","Огонь","Fire","Tabiat"],["Tuproq","Земля","Soil","Tabiat"],
+["Pomidor","Помидор","Tomato","Ovqat"],["Sabzi","Морковь","Carrot","Ovqat"],["Piyoz","Лук","Onion","Ovqat"],["Kartoshka","Картофель","Potato","Ovqat"],["Anor","Гранат","Pomegranate","Ovqat"],["Nok","Груша","Pear","Ovqat"],["Tarvuz","Арбуз","Watermelon","Ovqat"],["Shorva","Суп","Soup","Ovqat"],["Somsa","Самса","Samsa","Ovqat"],["Tuz","Соль","Salt","Ovqat"],["Asal","Мёд","Honey","Ovqat"],["Pishloq","Сыр","Cheese","Ovqat"],
+["O‘n bir","Одиннадцать","Eleven","Son va vaqt"],["Yigirma","Двадцать","Twenty","Son va vaqt"],["Ming","Тысяча","Thousand","Son va vaqt"],["Daqiqa","Минута","Minute","Son va vaqt"],["Oy (vaqt)","Месяц","Month","Son va vaqt"],["Tong","Утро","Morning","Son va vaqt"],["Kechqurun","Вечер","Evening","Son va vaqt"],["Tun","Ночь","Night","Son va vaqt"],["Dushanba","Понедельник","Monday","Son va vaqt"],["Juma","Пятница","Friday","Son va vaqt"],
+["Qanday?","Как?","How?","Salomlashuv"],["Nima?","Что?","What?","Salomlashuv"],["Qayerda?","Где?","Where?","Salomlashuv"],["Qachon?","Когда?","When?","Salomlashuv"],["Nega?","Почему?","Why?","Salomlashuv"],["Ismingiz nima?","Как вас зовут?","What is your name?","Salomlashuv"],["Tushunmadim","Я не понял","I don’t understand","Salomlashuv"],["Omad!","Удачи!","Good luck!","Salomlashuv"]
+];
+var first=0,cat="Hammasi",term="";
+var cats=["Hammasi"].concat(D.map(function(d){return d[3]}).filter(function(c,i,a){return a.indexOf(c)===i}));
+function norm(s){return s.toLowerCase().replace(/[‘’ʻʼ`´']/g,"").replace(/ё/g,"е")}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function hl(s,t){
+  if(!t)return esc(s);
+  var out="",n=norm(s),i=n.indexOf(t);
+  if(i<0||n.length!==s.length)return esc(s);
+  return esc(s.slice(0,i))+"<mark>"+esc(s.slice(i,i+t.length))+"</mark>"+esc(s.slice(i+t.length));
+}
+function mk(host,items,key,fn){
+  items.forEach(function(it,i){
+    var b=document.createElement("button");b.type="button";b.className="chip"+(key==="c"?" cat":"");
+    b.textContent=it.label;b.setAttribute("aria-pressed",it.on?"true":"false");
+    b.onclick=function(){fn(it.val)};host.appendChild(b);
+  });
+}
+function drawBars(){
+  var lb=document.getElementById("langs"),cb=document.getElementById("cats");
+  [].slice.call(lb.querySelectorAll(".chip")).forEach(function(n){n.remove()});
+  [].slice.call(cb.querySelectorAll(".chip")).forEach(function(n){n.remove()});
+  mk(lb,L.map(function(l,i){return{label:l[1],val:i,on:i===first}}),"l",function(v){first=v;drawBars();render()});
+  mk(cb,cats.map(function(c){return{label:c,val:c,on:c===cat}}),"c",function(v){cat=v;drawBars();render()});
+}
+function say(text,lang){
+  if(!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang=lang;speechSynthesis.speak(u)}catch(e){}
+}
+function render(){
+  var t=norm(term.trim()),ul=document.getElementById("list");ul.innerHTML="";
+  var rows=D.filter(function(d){
+    return(cat==="Hammasi"||d[3]===cat)&&(!t||d.slice(0,3).some(function(w){return norm(w).indexOf(t)>-1}));
+  });
+  document.getElementById("count").textContent=rows.length?rows.length+" ta so‘z topildi":"";
+  if(!rows.length){
+    ul.innerHTML='<div class="empty"><b>Hech narsa topilmadi</b>Boshqa yozilishini sinab ko‘ring yoki mavzuni “Hammasi”ga qaytaring.</div>';return;
+  }
+  var order=[first].concat([0,1,2].filter(function(i){return i!==first}));
+  rows.forEach(function(d){
+    var li=document.createElement("li");
+    order.forEach(function(k,pos){
+      var w=document.createElement("div");w.className="w"+(pos===0?" first":"");
+      w.innerHTML="<small>"+L[k][0].toUpperCase()+"</small><b lang='"+L[k][0]+"'>"+hl(d[k],t)+"</b>";
+      if(window.speechSynthesis&&k!==0){
+        var s=document.createElement("button");s.type="button";s.className="say";s.textContent="Tinglash";
+        s.setAttribute("aria-label",d[k]+" so‘zini tinglash");
+        s.onclick=function(){say(d[k],L[k][2])};w.appendChild(s);
+      }
+      li.appendChild(w);
+    });
+    ul.appendChild(li);
+  });
+}
+var q=document.getElementById("q");
+q.addEventListener("input",function(){term=q.value;render()});
+document.getElementById("clr").onclick=function(){q.value="";term="";render();q.focus()};
+drawBars();render();
+</script>
+</body>
+</html>
